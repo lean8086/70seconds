@@ -114,6 +114,16 @@ button.separation_stg {
 	background-size: 2.5em;
 }
 
+<<<<<<< HEAD
+=======
+#main img {
+	width: 60px;
+	height: 40px;
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+
+>>>>>>> master
 /**
  * Elements
  */
