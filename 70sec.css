@@ -28,6 +28,11 @@ body {
 	-webkit-transform: translateZ(0);
 }
 
+body::after {
+	content: url(svg/surface.svg) url(svg/stars.svg) url(svg/parachute_btn.svg) url(svg/shield_btn.svg) url(svg/separation_btn.svg) url(svg/parachute.svg) url(svg/capsule.svg) url(svg/shield.svg) url(svg/skycrane_hd.svg) url(svg/friction.svg);
+	display: none;
+}
+
 /**
  * Hide (remove to show!)
  */
@@ -180,7 +185,7 @@ button.separation_stg {
 	-webkit-transform: scaleY(0);
 	width: 498px;
 	height: 1553px;
-	left: -172px;
+	left: -171px;
 }
 
 #capsule {

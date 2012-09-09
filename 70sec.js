@@ -130,8 +130,6 @@
 			rocket = 1,
 			// How much the speed increase or decrease
 			step = 0.01,
-			// Vertical speed of spacecraft when user isn't pressing the main rocket key
-			gravityStep = 0.03,
 			// Speed of skycrane flying after rover landing
 			flyAwayStep = 0.06;
 
@@ -249,7 +247,7 @@
 				// Update Vertical speed:
 				// - When control are used, then apply negative force
 				// - On default situation, apply a positive force (gravity)
-				crane.y += crane.ySpeed += crane.yRocket ? -step : gravityStep;
+				crane.y += crane.ySpeed += crane.yRocket ? -step : step;
 				// Validate crashing
 				if (crane.y > ground || crane.x > viewportWidth || crane.x < -crane.width) { end('You\'ve crashed'); }
 				// Validate the landing area
@@ -293,7 +291,7 @@
 			crane.y = -crane.height;
 			// Set the crane initial speed
 			crane.xSpeed = 1;
-			crane.ySpeed = 0.5;
+			crane.ySpeed = 0.1;
 			// Set initial propulsion
 			crane.xRocket = crane.yRocket = 0;
 			// Allow user to drive
@@ -360,10 +358,11 @@
 			}
 		},
 			// Collection with actions/stages and its respective time to show
+			// TODO: 49,38,29
 			timing = {
-				49: 'parachute_stg',
-				38: 'shield_stg',
-				29: 'separation_stg'
+				69: 'parachute_stg',
+				68: 'shield_stg',
+				67: 'separation_stg'
 			},
 			// Collection of accumulative stages execution
 			queue = [];
