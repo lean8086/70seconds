@@ -361,9 +361,9 @@
 		},
 			// Collection with actions/stages and its respective time to show
 			timing = {
-				69: 'parachute_stg',
-				68: 'shield_stg',
-				67: 'separation_stg'
+				49: 'parachute_stg',
+				29: 'shield_stg',
+				20: 'separation_stg'
 			},
 			// Collection of accumulative stages execution
 			queue = [];
