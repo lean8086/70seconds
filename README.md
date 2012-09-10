@@ -11,4 +11,4 @@ The name of the game comes from the original NASA mission called "Curiosity's Se
 
 See this video for details: http://youtu.be/ISmWAyQxqqs
 
-![Curiosity's Seven Minutes of Terror](http://www.jpl.nasa.gov/infographics/uploads/infographics/10776.jpg)
+Check out this infography: http://www.jpl.nasa.gov/infographics/uploads/infographics/10776.jpg
