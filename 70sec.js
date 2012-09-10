@@ -1,11 +1,11 @@
 /*!
  * 70 seconds of terror
  * Landing a spacecraft on the surface of Mars.
- *
  * @author Leandro Linares
- *
- * Game built for the js13kgames.com competition.
- * @date August-September 2012
+ * Code built for the [js13kgames competition](http://js13kgames.com) on august-september 2012.
+ * The name of the game comes from the original NASA mission called "Curiosity's Seven Minutes of Terror".
+ * See this video for details: http://youtu.be/ISmWAyQxqqs
+ * Check out this infography: http://www.jpl.nasa.gov/infographics/uploads/infographics/10776.jpg
  */
 (function (win) {
 	'use strict';
@@ -42,7 +42,7 @@
 			return r;
 		}()),
 		// RequestAnimationFrame
-		rAF = win.requestAnimationFrame || win.webkitRequestAnimationFrame,
+		rAF = win.requestAnimationFrame || win.webkitRequestAnimationFrame || win.mozRequestAnimationFrame || win.msRequestAnimationFrame,
 
 	/**
 	 * Cross-game members
