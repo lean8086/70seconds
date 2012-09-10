@@ -28,11 +28,12 @@
 		// Games references
 		canvasGame,
 		DOMgame,
+		// Allow to restart the game on canvasGame the second time
+		newbie = true,
 		// Grab the size of screen
 		viewportWidth = 900,
 		viewportHeight = 400,
 		// Reference to all manipulable DOM elements
-		// Use string.split instead a literal array to save some filesize and get a full compression
 		DOM = (function () {
 			var r = [];
 
@@ -67,9 +68,18 @@
 			show(DOM.main);
 		},
 		// Remaining time to acomplish the mission
-		countdown = 70,
-		// Method executed each countdown second
-		timeTick = function () {
+		countdown;
+
+	/**
+	 * Inits the countdown
+	 */
+	function play(time) {
+		// Hide the previous screens
+		hide(DOM.main);
+		// Set the countdown value and reference on screen (DOM Element)
+		countdown = DOM.time.textContent = time;
+		// Init the time update
+		timer = win.setInterval(function () {
 			// Update the reference of time (variable)
 			countdown -= 1;
 			// Update the reference on screen (DOM Element)
@@ -78,8 +88,13 @@
 			// Trigger the dom game tick to check stages
 			DOMgame.tick();
 			// End game when time ends
-			if (!countdown) { endGame('Time\'s up'); }
-		};
+			if (!countdown) {
+				endGame('Time\'s up');
+			}
+		}, 1000);
+		// Show the controls
+		show(DOM.panel);
+	}
 
 	/**
 	 * CANVAS GAME
@@ -254,13 +269,13 @@
 				checkLanding();
 			// Skycrane mode
 			} else {
+				// Stop the time
+				win.clearInterval(timer);
 				// Curiosity descent until touch the ground
 				if (rover.y + rover.height < ground) {
 					rover.y += 0.5;
 				// Fly away!
 				} else {
-					// Stop the time
-					win.clearInterval(timer);
 					// Mission accomplished!
 					if (crane.x > viewportWidth) { end('Mission accomplished'); }
 					// Move the crane
@@ -284,7 +299,7 @@
 			// Reset spacecraft visibilities
 			hide(DOM.DOMgame);
 			// Reset message
-			updateMessage();
+			updateMessage('Use the arrows keys to land.');
 			// Set crane on initial place
 			// x = 6em
 			crane.x = 6 * 16;
@@ -298,6 +313,8 @@
 			enableControls();
 			// Do the element visible
 			show(DOM.canvasGame);
+			// Mark as checkpoint to restart from here the second time
+			newbie = false;
 			// Init the rAF cicle
 			tick();
 		}
@@ -322,10 +339,6 @@
 				'go': function () {
 					// Feedback
 					updateMessage('Descending through the Martian atmosphere. Get ready for instructions.');
-					// Init the time update
-					timer = win.setInterval(timeTick, 1000);
-					// Show the controls
-					show(DOM.panel);
 					// Add inclination to the guided entry
 					addClass(DOM.DOMgame, 'entry_stg');
 				}
@@ -358,7 +371,7 @@
 			}
 		},
 			// Collection with actions/stages and its respective time to show
-			// TODO: 49,38,29
+			// Defaults: 49,38,29
 			timing = {
 				49: 'parachute_stg',
 				38: 'shield_stg',
@@ -371,11 +384,12 @@
 		 * Methods
 		 */
 		function init() {
-			// Hide the previous screens
-			hide(DOM.main);
+			// Hide the rover element
 			hide(DOM.curiosity);
-			// Set the countdown value and reference on screen (DOM Element)
-			countdown = DOM.time.textContent = 70;
+			//
+			DOM.play.textContent = 'Replay';
+			//
+			play(70);
 			// Clean the scene container classnames (and show, because 'h' class is deleted)
 			DOM.DOMgame.className = '';
 			// Execute the first stage
@@ -429,7 +443,17 @@
 	// Init the DOM game when game is ready to play
 	win.onload = function () {
 		// Add the hability of start/restart the game to the main screen button
-		DOM.play.addEventListener('click', DOMgame.init);
+		DOM.play.addEventListener('click', function () {
+			//
+			if (newbie) {
+				DOMgame.init();
+			} else {
+				//
+				play(20);
+				//
+				canvasGame();
+			}
+		});
 		// Show the PLAY button
 		show(DOM.play);
 	};
