@@ -10,3 +10,6 @@ The uncompressed code is 100% warning-free on http://jslint.com :)
 The name of the game comes from the original NASA mission called "Curiosity's Seven Minutes of Terror".
 
 See this video for details: http://youtu.be/ISmWAyQxqqs
+
+### Infography
+![Curiosity's Seven Minutes of Terror](http://www.jpl.nasa.gov/infographics/uploads/infographics/10776.jpg)
