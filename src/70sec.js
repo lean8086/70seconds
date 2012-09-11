@@ -73,11 +73,11 @@
 	/**
 	 * Inits the countdown
 	 */
-	function play(time) {
+	function setTimer(seconds) {
 		// Hide the previous screens
 		hide(DOM.main);
 		// Set the countdown value and reference on screen (DOM Element)
-		countdown = DOM.time.textContent = time;
+		countdown = DOM.time.textContent = seconds;
 		// Init the time update
 		timer = win.setInterval(function () {
 			// Update the reference of time (variable)
@@ -115,19 +115,19 @@
 			ground = 360,
 			// Spacecraft to be controlled by user
 			crane = {
-				'image': new Img('../svg/skycrane_sd.svg'),
+				'image': new Img('svg/skycrane_sd.svg'),
 				'width': 40,
 				'height': 20
 			},
 			// Rockets turned on when user's controlls are pressed
 			rockets = {
-				'image': new Img('../svg/rockets.svg'),
+				'image': new Img('svg/rockets.svg'),
 				'width': 40,
 				'height': 12
 			},
 			// Object that will descent to the surface automatically when the crane is in the landing area
 			rover = {
-				'image': new Img('../svg/rover.svg'),
+				'image': new Img('svg/rover.svg'),
 				'width': 29,
 				'height': 17,
 				'relativeX': 5
@@ -322,7 +322,9 @@
 		/**
 		 * Exports
 		 */
-		canvasGame = init;
+		canvasGame = {
+			'init': init
+		};
 	}());
 
 	/**
@@ -366,7 +368,7 @@
 					// Feedback
 					updateMessage('Get ready to take manual controls.');
 					// Give 3 seconds of delay to take the manual control and start the canvas game
-					win.setTimeout(canvasGame, 7000);
+					win.setTimeout(canvasGame.init, 7000);
 				}
 			}
 		},
@@ -386,10 +388,8 @@
 		function init() {
 			// Hide the rover element
 			hide(DOM.curiosity);
-			//
+			// Change the value of button to the next time
 			DOM.play.textContent = 'Replay';
-			//
-			play(70);
 			// Clean the scene container classnames (and show, because 'h' class is deleted)
 			DOM.DOMgame.className = '';
 			// Execute the first stage
@@ -444,14 +444,18 @@
 	win.onload = function () {
 		// Add the hability of start/restart the game to the main screen button
 		DOM.play.addEventListener('click', function () {
-			//
+			// Execute only one time
 			if (newbie) {
+				// Calculate time to include the DOM game + canvas game
+				setTimer(70);
+				// Init the entry stages
 				DOMgame.init();
+			// Execute after first execution
 			} else {
-				//
-				play(20);
-				//
-				canvasGame();
+				// Calculate time to include only the canvas game
+				setTimer(20);
+				// Init the landing stage
+				canvasGame.init();
 			}
 		});
 		// Show the PLAY button
