@@ -1,22 +1,13 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="191" height="109" stroke-width="5" fill="#F8F8F8" stroke="#2D2D2D" stroke-linecap="round">
-<polygon points="17,7 0,32 42,61 42,18" stroke="none"/>
-<polygon points="136,23 136,14 104,14 104,34 83,34 58,30 47,21 47,0 31,0 31,10 42,10 42,18 17,7 0,32 42,61 173,59 173,49 159,49 159,45 145,22" stroke="none"/>
-<polygon points="83,21 96,21 96,13 72,13 58,30 83,34" stroke="none"/>
-<polygon points="145,14 145,23 159,45 173,45 173,43 173,34 161,34 161,26 180,26 180,15 180,14" stroke="none"/>
-<line x1="27" y1="88" x2="27" y2="65"/>
-<line x1="27" y1="65" x2="42" y2="61"/>
-<line x1="42" y1="61" x2="72" y2="61"/>
-<line x1="72" y1="61" x2="102" y2="88"/>
-<line x1="72" y1="61" x2="123" y2="51"/>
-<line x1="122" y1="51" x2="123" y2="14"/>
-<line x1="122" y1="51" x2="173" y2="59"/>
-<line x1="173" y1="59" x2="173" y2="65"/>
-<line x1="173" y1="65" x2="173" y2="88"/>
-<circle fill="none" cx="31" cy="90" r="15"/>
-<circle fill="#2D2D2D" cx="31" cy="90" r="6"/>
-<circle fill="none" cx="98" cy="90" r="15"/>
-<circle fill="#2D2D2D" cx="98" cy="90" r="6"/>
-<circle fill="none" cx="172" cy="90" r="15"/>
-<circle fill="#2D2D2D" cx="172" cy="90" r="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="191" height="109" stroke-width="5" stroke-linecap="round" stroke="#2D2D2D" fill="none">
+<polygon fill="#F8F8F8" points="72,6 58,23 17,0 0,25 42,54 173,52 180,19 180,7" stroke="none"/>
+<line x1="72" y1="54" x2="102" y2="81"/>
+<line x1="122" y1="44" x2="123" y2="7"/>
+<path d="M31,68c-8,0-15,7-15,15s7,15,15,15 s15-7,15-15S39,68,31,68z M31,89c-3,0-6-3-6-6s3-6,6-6s6,3,6,6S34,89,31,89z"/>
+<circle fill="#2D2D2D" cx="31" cy="83" r="6"/>
+<path d="M98,68c-8,0-15,7-15,15s7,15,15,15 s15-7,15-15S106,68,98,68z M98,89c-3,0-6-3-6-6s3-6,6-6s6,3,6,6S101,89,98,89z"/>
+<circle fill="#2D2D2D" cx="98" cy="83" r="6"/>
+<path d="M172,68c-8,0-15,7-15,15s7,15,15,15 s15-7,15-15S180,68,172,68z M172,89c-3,0-6-3-6-6s3-6,6-6s6,3,6,6S175,89,172,89z"/>
+<circle fill="#2D2D2D" cx="172" cy="83" r="6"/>
+<polyline points="27,81 27,58 42,54 72,54 122,44 173,52 173,83"/>
 </svg>

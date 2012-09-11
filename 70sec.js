@@ -37,7 +37,7 @@
 		DOM = (function () {
 			var r = [];
 
-			['main', 'reason', 'play', 'DOMgame', 'spacecraft', 'curiosity', 'parachute', 'capsule', 'shield', 'friction', 'canvasGame', 'canvas', 'landing', 'panel', 'time', 'message', 'action'].forEach(function (e) { r[e] = doc.getElementById(e); });
+			['main', 'reason', 'play', 'DOMgame', 'curiosity', 'canvasGame', 'canvas', 'landing', 'panel', 'time', 'message', 'action'].forEach(function (e) { r[e] = doc.getElementById(e); });
 
 			return r;
 		}()),
@@ -366,7 +366,7 @@
 					// Feedback
 					updateMessage('Get ready to take manual controls.');
 					// Give 3 seconds of delay to take the manual control and start the canvas game
-					win.setTimeout(canvasGame, 3000);
+					win.setTimeout(canvasGame, 7000);
 				}
 			}
 		},
