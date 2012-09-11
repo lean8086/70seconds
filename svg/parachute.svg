@@ -5,17 +5,6 @@
 <line stroke-width="3" x1="253" y1="1518" x2="262" y2="1553"/>
 <rect x="1" y="111" fill="#E8E8E8" stroke="#E8E8E8" width="495" height="137"/>
 <path fill="#E8E8E8" stroke="#E8E8E8" d="M496,85c0,0,0-84-248-84S1,85,1,85H496z"/>
-<line stroke="#FFF" x1="248" y1="85" x2="248" y2="253"/>
-<line stroke="#FFF" x1="302" y1="85" x2="302" y2="253"/>
-<line stroke="#FFF" x1="360" y1="85" x2="360" y2="253"/>
-<line stroke="#FFF" x1="412" y1="85" x2="412" y2="253"/>
-<line stroke="#FFF" x1="465" y1="85" x2="465" y2="253"/>
-<line stroke="#FFF" x1="195" y1="253" x2="195" y2="85"/>
-<line stroke="#FFF" x1="138" y1="253" x2="138" y2="85"/>
-<line stroke="#FFF" x1="32" y1="253" x2="32" y2="85"/>
-<line stroke="#FFF" x1="85" y1="253" x2="85" y2="85"/>
-<line stroke="#FFF" x1="1" y1="85" x2="1" y2="253"/>
-<line stroke="#FFF" x1="496" y1="85" x2="496" y2="253"/>
 <line x1="248" y1="253" x2="253" y2="1420"/>
 <line x1="195" y1="253" x2="253" y2="1420"/>
 <line x1="138" y1="253" x2="253" y2="1420"/>
