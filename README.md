@@ -1,6 +1,8 @@
 # 70 seconds of terror
 Landing a spacecraft on the surface of Mars.
 
+Demo: http://js13kgames.com/entries/70-seconds-of-terror/
+
 ### About the code
 Code built for the [js13kgames competition](http://js13kgames.com) on august-september 2012.
 
